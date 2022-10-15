@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars List</title>
+</head>
+<body>
+    <style> table.cars-list, .cars-list td {
+        margin: 0 auto;
+        text-align: center;
+        border: 1px solid black ;
+        border-collapse: collapse;
+        padding: 10px;
+        font: bold 0.9rem sans-serif;
+        width: 20%;
+        }
+    </style>
+    <table class="cars-list">
+        <th:block th:each="i: ${#numbers.sequence(1, count)}">
+            <tr>
+                <td th:text="${cars.get(i - 1).getManufacturer()}">manufacturer</td>
+                <td th:text="${cars.get(i - 1).getSeries()}">series</td>
+                <td th:text="${cars.get(i - 1).getLicensePlate()}">licensePlate</td>
+            </tr>
+        </th:block>
+    </table>
+    </div>
+</body>
+</html>
