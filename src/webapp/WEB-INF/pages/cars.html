@@ -17,11 +17,11 @@
         }
     </style>
     <table class="cars-list">
-        <th:block th:each="i: ${#numbers.sequence(1, count)}">
+        <th:block th:each="car: ${cars}">
             <tr>
-                <td th:text="${cars.get(i - 1).getManufacturer()}">manufacturer</td>
-                <td th:text="${cars.get(i - 1).getSeries()}">series</td>
-                <td th:text="${cars.get(i - 1).getLicensePlate()}">licensePlate</td>
+                <td th:text="${car.getManufacturer()}">manufacturer</td>
+                <td th:text="${car.getSeries()}">series</td>
+                <td th:text="${car.getLicensePlate()}">licensePlate</td>
             </tr>
         </th:block>
     </table>

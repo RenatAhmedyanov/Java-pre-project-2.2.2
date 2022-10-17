@@ -12,8 +12,8 @@ public class CarServiceImpl implements CarService {
     @Autowired
     private CarDAO carDao;
 
-    public List<Car> getCarsList() {
-        return carDao.getCarsList();
+    public List<Car> getCarsList(Integer count) {
+        return carDao.getCarsList(count);
     }
 
     public int getCarsCount() {

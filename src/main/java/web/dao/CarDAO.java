@@ -19,8 +19,12 @@ public class CarDAO {
         CARS_COUNT = cars.size();
     }
 
-    public List<Car> getCarsList() {
-        return cars;
+    public List<Car> getCarsList(Integer count) {
+        if (count == null || count < 1 || count > 5) {
+            return cars;
+        } else {
+            return cars.stream().limit(count).toList();
+        }
     }
 
     public int getCarsCount() {
